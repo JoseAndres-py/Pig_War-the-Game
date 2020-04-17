@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Administracion";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/vnd.microsoft.icon" href="~/img/icon.ico">
+<title>Pagina de administración - Space Invaders</title>
+<meta name="description" content="Pagina de administración">
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/jquery_canvasjs.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/Grafica.js"></script>
+<script src="~/Scripts/Login.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/login.css">
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col">
+            <div class="jumbotron p-0">
+                <h1>
+                    <p>Pagina de administración - Pig Wars</p>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    <p>Grafica de usuarios conectados cada 10 minutos</p>
+                    <p id="date"></p>
+                </h2>
+                <p>
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h2>
+                    Usuarios Registrados
+                </h2>
+                <ul class="list-group" id="userList"></ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h2>
+                    Usuarios en Espera  
+                </h2>
+                <p>
+                    <ul class="list-group" id="userWaiting"></ul>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h2>
+                    Usuarios Jugando
+                </h2>
+                <p>
+                    <ul class="list-group" id="userPlaying"></ul>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h2>
+                    Salir de Administracion
+                </h2>
+                <button id='DISCONNECT' class="btn btn-success btn-block">Salir</button>
+                <p id="pageInfo"></p>
+            </div>
+        </div>
+    </div>
+</div>

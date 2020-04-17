@@ -1,0 +1,9 @@
+﻿@model List<Negocio.Contacto>
+@foreach (var c in Model)
+{
+    <tr onclick="ShowEdit(@c.ContactoId,@c.PersonaId,@c.TipoContactoId,'@c.Valor')">
+        <td>@c.DescripcionTipoContacto</td>
+        <td>@c.Valor</td>
+    </tr>
+}
+

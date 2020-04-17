@@ -1,0 +1,36 @@
+﻿@model Game.Models.ListadoPositions
+<div id="wall">
+    @foreach (var wall in Model.Barrera)
+    {
+        @Html.Raw("<div class='wall' style='left:" + @wall.x.ToString().Replace(',', '.') + "%" + ";top:" + @wall.y.ToString().Replace(',', '.') + "%" + "'></div>")
+    }
+</div>
+
+<div id="heroes">
+    @if (Model.Enemigo.y != 0) { 
+        if (Model.Enemigo.Id == 1)
+        {
+            @Html.Raw("<div class='hero1' style='left:" + @Model.Enemigo.x.ToString().Replace(',', '.') + "%" + ";top:" + @Model.Enemigo.y.ToString().Replace(',', '.') + "%" + "'></div>")
+        }
+        else
+        {
+            @Html.Raw("<div class='hero2' style='left:" + @Model.Enemigo.x.ToString().Replace(',', '.') + "%" + ";top:" + @Model.Enemigo.y.ToString().Replace(',', '.') + "%" + "'></div>")
+        }
+    }
+</div>
+
+
+<div id="missiles">
+    @try
+    {
+        foreach (var misil in Model.Disparos)
+        {
+            @Html.Raw("<div class='missile' style='left:" + @misil.x.ToString().Replace(',', '.') + "%" + ";top:" + @misil.y.ToString().Replace(',', '.') + "%" + "'></div>")
+        }
+    }catch (Exception ex) { }
+</div>
+
+<h4 align="center">Puntaje <span class="label label-default">@Model.Puntaje</span></h4>
+
+
+

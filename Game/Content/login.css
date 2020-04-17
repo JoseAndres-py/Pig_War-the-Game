@@ -1,0 +1,19 @@
+body {
+    background-image: url("../img/red-barn-and-silo-vector.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #cccccc;
+}
+.form-container{
+    padding: 38px 48px;
+    margin-top: 96px;
+    background-color: rgba(255,255,255,0.75);
+    -webkit-box-shadow: 10px 10px 30px 10px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 30px 10px rgba(0,0,0,0.41);
+    box-shadow: 10px 10px 30px 10px rgba(0,0,0,0.41);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}

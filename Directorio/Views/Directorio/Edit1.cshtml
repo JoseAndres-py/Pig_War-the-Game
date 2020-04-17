@@ -1,0 +1,77 @@
+﻿@model Directorio.Models.Persona
+@{
+    ViewBag.Title = "Editar";
+}
+<script src="~/Scripts/Contacto.js"></script>
+<h1>Informacion de @Model.Datos.PrimerNombre @Model.Datos.PrimerApellido</h1>
+<div class="container">
+    <div class="row">
+        <h2>Personal</h2>
+        <form action="/Directorio/Edit" method="post" class="col-md-12">
+            <input name="PersonaId" hidden value="@Model.Datos.PersonaId" />
+            <div class="row">
+                <label class="col-md-2">Primer nombre</label>
+                <input class="col-md-2" name="PrimerNombre" type="text" value="@Model.Datos.PrimerNombre" />
+            </div>
+            <div class="row">
+                <label class="col-md-2">Segundo nombre</label>
+                <input class="col-md-2" name="SegundoNombre" type="text" value="@Model.Datos.SegundoNombre" />
+            </div>
+            <div class="row">
+                <label class="col-md-2">Primer apellido</label>
+                <input class="col-md-2" name="PrimerApellido" type="text" value="@Model.Datos.PrimerApellido" />
+            </div>
+            <div class="row">
+                <label class="col-md-2">Segundo apellido</label>
+                <input class="col-md-2" name="SegundoApellido" type="text" value="@Model.Datos.SegundoApellido" />
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <input class="col-md-2" type="submit" value="Actualizar" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <h2>Contacto</h2>
+    <input type="button" value="+" onclick="ShowEdit(0,@Model.Datos.PersonaId,null,null);" />
+    <div class="col-sm-7">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Tipo de contacto</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @Html.Partial("~/Views/Contacto/ListaContactos.cshtml", Model.Datos.InformacionContacto)
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div id="DetalleContacto" hidden="hidden">
+        <h2>Detalle de contacto</h2>
+        <input name="ContactoId" id="ContactoId" hidden />
+        <input name="PersonaId" id="PersonaId" hidden />
+        <div class="col-md-5">
+            <div class="row">
+                <label class="col-md-2">Tipo de contacto</label>
+                <select name="TipoContactoId" id="TipoContactoId">
+                    @foreach (var op in Model.TiposContacto)
+                    {
+                        <option value="@op.TipoContactoId">@op.Descripcion</option>
+                    }
+                </select>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Valor</label>
+                <input class="col-md-5" name="Valor" id="Valor" type="text" value="" />
+            </div>
+            <div class="row">
+                <input type="button" value="Guardar" onclick="EditContacto();" />
+                <input type="button" value="Borrar" onclick="Borrar();" />
+            </div>
+        </div>
+    </div>
+</div>

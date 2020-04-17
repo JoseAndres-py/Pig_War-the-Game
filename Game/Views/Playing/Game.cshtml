@@ -1,0 +1,33 @@
+﻿@model Game.Models.ListadoPositions
+@{
+    ViewBag.Title = "Game Marranitos";
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/vnd.microsoft.icon" href="img/icon.ico">
+<title>Guerra de Marranitos</title>
+
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/popper.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/Game.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/style_game.css">
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-sm-2 col-xs-6"></div>
+        <div class="col-md-6 col-sm-6 col-xs-24">
+            <div id="background" class="form-container">
+                <div id="heroes"></div>
+                <div id="draw">
+                    @Html.Partial("~/Views/Playing/ListaBarrera.cshtml", Model)
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-24"></div>
+    </div>
+</div>
+
+

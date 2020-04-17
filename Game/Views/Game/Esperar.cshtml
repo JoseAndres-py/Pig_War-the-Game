@@ -1,0 +1,31 @@
+﻿@model Game.Models.ListadoUsers
+@{
+    ViewBag.Title = "Esperar";
+}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/vnd.microsoft.icon" href="~/img/icon.ico">
+<title>Página de espera</title>
+
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/popper.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/Esperar.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/login.css">
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <ul class="list-group" id="userWaiting">
+                @Html.Partial("~/Views/Game/ListaUsuarios.cshtml", Model)
+            </ul>
+            <input type='submit' id='DISCONNECT' value='Desconectarse' class="btn btn-success btn-block">
+            <div id="chartContainer" style="height: 100%; width: 100%;"></div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+</div>
+

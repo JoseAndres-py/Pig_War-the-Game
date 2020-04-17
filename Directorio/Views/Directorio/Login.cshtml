@@ -1,0 +1,23 @@
+﻿@model Directorio.Models.ListadoPersonas
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/Index.js"></script>
+<h2>Listado de contactos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model.Listado.Registros)
+        {
+            <tr onclick="Editar(@persona.PersonaId);">
+                <td>@persona.PrimerNombre @persona.SegundoNombre</td>
+                <td>@persona.PrimerApellido @persona.SegundoApellido</td>
+            </tr>
+        }
+    </tbody>
+</table>
